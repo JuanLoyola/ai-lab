@@ -30,7 +30,7 @@ export const PROJECTS: Project[] = [
       'Escalado a humanos: confianza < 0.75 o prioridad P0 salta del bot',
       'Deduplica redeliveries de Slack — un mensaje = una clasificación',
     ],
-    repoUrl: 'https://github.com/loyolajuan/slack-triage-bot',
+    repoUrl: 'https://github.com/JuanLoyola/slack-triage-bot',
     demo: {
       kind: 'video',
       url: '/demos/slack-triage.mp4',
@@ -51,7 +51,7 @@ export const PROJECTS: Project[] = [
       'Nunca persiste una factura medio extraída',
       'Money como Decimal, dedupe por proveedor + número, Slack notificador que no rompe el pipeline',
     ],
-    repoUrl: 'https://github.com/loyolajuan/invoice-agent',
+    repoUrl: 'https://github.com/JuanLoyola/invoice-agent',
     demo: {
       kind: 'swagger',
       url: process.env.NEXT_PUBLIC_INVOICE_URL ?? '',
@@ -72,7 +72,7 @@ export const PROJECTS: Project[] = [
       'Verificación honesta: subprocess fresco por corrida, la suite real manda',
       'Budget duro de intentos; parches validados contra path traversal antes de tocar disco',
     ],
-    repoUrl: 'https://github.com/loyolajuan/code-agent',
+    repoUrl: 'https://github.com/JuanLoyola/code-agent',
     demo: {
       kind: 'video',
       url: '/demos/code-agent.mp4',
