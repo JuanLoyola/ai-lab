@@ -1,0 +1,88 @@
+@import 'tailwindcss';
+
+/*
+ * Minimal — dark editorial inspirado en profound.me.
+ * Reglas del sistema (no negociables): un solo acento (esmeralda),
+ * bordes sobre sombras, grid + glow estático, mono solo para datos,
+ * motion con un único ease [0.22, 1, 0.36, 1].
+ */
+
+/* ---------- tokens ---------- */
+@theme {
+  --color-ink: #060607;
+  --color-line: rgb(255 255 255 / 0.08);
+  --color-line-strong: rgb(255 255 255 / 0.22);
+  --color-muted: #9a9aa3;
+  --color-accent: #34d399;
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, 'Cascadia Mono', monospace;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: #ededed;
+  }
+
+  ::selection {
+    background: rgb(52 211 153 / 0.25);
+  }
+
+  button:not(:disabled),
+  select:not(:disabled),
+  summary,
+  a[href] {
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  /* gradiente de texto: blanco → 55% blanco, la única "degradación" permitida */
+  .text-gradient {
+    background: linear-gradient(180deg, #fff 15%, rgb(255 255 255 / 0.55));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* superficie del sistema: gradiente sutil + hairline, nunca sombra */
+  .panel {
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.04), rgb(255 255 255 / 0.015));
+    border: 1px solid var(--color-line);
+  }
+
+  /* grilla hairline de 64px con máscara radial que se desvanece hacia abajo */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgb(255 255 255 / 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 90% 75% at 50% 0%, #000 25%, transparent 100%);
+  }
+
+  /* placeholders: pulso suave, jamás spinners */
+  .skeleton {
+    background: rgb(255 255 255 / 0.05);
+    animation: skeleton-pulse 1.6s ease-in-out infinite;
+  }
+}
+
+@keyframes skeleton-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
+}
