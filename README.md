@@ -5,6 +5,8 @@ lenguaje de negocio, qué demuestra cada uno y cómo probarlos. Hecha con
 Next.js 15 + Tailwind v4 y el design system **Minimal** (dark-first, grid
 sutil + glow, tipografía Geist, motion con `Reveal`/`WordReveal`).
 
+![Captura del hub — hero "El LLM propone, el código valida." y la sección El Loop](docs/hub.png)
+
 ## Por qué existe
 
 Los proyectos son backend puro: sin algo así, la única forma de "probarlos"
